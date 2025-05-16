@@ -6,7 +6,7 @@
     <title>tugas-html-js</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body style="padding: 4rem 2rem">
+  <body>
     <h1>Tugas-tugas HTML & Javascript dari Pak Dian.</h1>
 
     <!-- pertama -->
@@ -15,6 +15,7 @@
       <form>
         <hr />
         <center>
+          <!-- input -->
           <table>
             <tr>
               <td><label for="namaBarang">Nama Barang</label></td>
@@ -30,18 +31,19 @@
             </tr>
           </table>
           <hr style="border-width: 3px; color: black" />
+          <!-- output -->
           <table>
             <tr>
               <td><label for="total">Total</label></td>
-              <td><input type="text" name="total" id="total" /></td>
+              <td><input type="text" name="total" id="total" readonly /></td>
             </tr>
             <tr>
               <td><label for="diskon">diskon</label></td>
-              <td><input type="text" name="diskon" id="diskon" /></td>
+              <td><input type="text" name="diskon" id="diskon" readonly /></td>
             </tr>
             <tr>
               <td><label for="bayar">Bayar</label></td>
-              <td><input type="text" name="bayar" id="bayar" /></td>
+              <td><input type="text" name="bayar" id="bayar" readonly /></td>
             </tr>
           </table>
           <hr />
@@ -61,6 +63,7 @@
         <center>
           <h2>PT.SATU MALAM 2 CINTA</h2>
           <hr />
+          <!-- input -->
           <table>
             <tr>
               <td><label for="namaPegawai">Nama Pegawai</label></td>
@@ -80,18 +83,23 @@
             </tr>
           </table>
           <hr style="border-width: 3px; color: black" />
+          <!-- output -->
           <table>
             <tr>
               <td><label for="gaji">Gaji</label></td>
-              <td><input type="text" name="gaji" id="gaji" /></td>
+              <td><input type="text" name="gaji" id="gaji" readonly /></td>
             </tr>
             <tr>
               <td><label for="tunjAnak">Tunj.anak 10%</label></td>
-              <td><input type="text" name="tunjAnak" id="tunjAnak" /></td>
+              <td>
+                <input type="text" name="tunjAnak" id="tunjAnak" readonly />
+              </td>
             </tr>
             <tr>
               <td><label for="totalGaji">Total Gaji</label></td>
-              <td><input type="text" name="totalGaji" id="totalGaji" /></td>
+              <td>
+                <input type="text" name="totalGaji" id="totalGaji" readonly />
+              </td>
             </tr>
           </table>
           <hr />
@@ -110,6 +118,7 @@
       <form>
         <hr />
         <center>
+          <!-- input -->
           <table>
             <tr>
               <td><label for="namaBarangTiga">Nama Barang</label></td>
@@ -125,24 +134,57 @@
             </tr>
           </table>
           <hr style="border-width: 3px; color: black" />
+          <!-- output -->
           <table>
             <tr>
               <td><label for="hargaTiga">Harga</label></td>
-              <td><input type="text" name="hargaTiga" id="hargaTiga" /></td>
+              <td>
+                <input type="text" name="hargaTiga" id="hargaTiga" readonly />
+              </td>
             </tr>
             <tr>
               <td><label for="totalTiga">Total</label></td>
-              <td><input type="text" name="totalTiga" id="totalTiga" /></td>
+              <td>
+                <input type="text" name="totalTiga" id="totalTiga" readonly />
+              </td>
             </tr>
           </table>
           <div class="buttons">
-            <input type="button" id="proses-tugas-tiga" value="Proses" />
+            <input
+              type="button"
+              id="proses-tugas-tiga"
+              value="Proses"
+              readonly
+            />
             <input type="reset" value="Reset" />
           </div>
         </center>
         <hr />
       </form>
       <script src="tugas-tiga.js"></script>
+    </div>
+
+    <!-- keempat -->
+    <h2>4. Program Penjualan Barang Elektronik</h2>
+    <div id="tugas-empat">
+      <form>
+        <center>
+          <hr />
+          <!-- input -->
+          <table>
+            <tr>
+              <td><label for="namaBarangEmpat">Nama Barang</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="namaBarangEmpat"
+                  id="namaBarangEmpat"
+                />
+              </td>
+            </tr>
+          </table>
+        </center>
+      </form>
     </div>
   </body>
 </html>
