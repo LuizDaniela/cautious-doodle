@@ -1,6 +1,5 @@
 document.getElementById("proses-tugas-satu").addEventListener("click", function () {
-    let data = proses(this.form);
-    tampilkan(this.form, data);
+    tampilkan(this.form, proses(this.form));
 });
 
 function tampilkan(form, data) {

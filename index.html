@@ -38,7 +38,7 @@
               <td><input type="text" name="total" id="total" readonly /></td>
             </tr>
             <tr>
-              <td><label for="diskon">diskon</label></td>
+              <td><label for="diskon">Diskon</label></td>
               <td><input type="text" name="diskon" id="diskon" readonly /></td>
             </tr>
             <tr>
@@ -123,8 +123,12 @@
             <tr>
               <td><label for="namaBarangTiga">Nama Barang</label></td>
               <td>
-                <select name="namaBarangTiga" id="namaBarangTiga">
-                  <option value="0" selected>pilih barang</option>
+                <select
+                  name="namaBarangTiga"
+                  id="namaBarangTiga"
+                  class="selects"
+                >
+                  <option value="0" selected>Pilih barang</option>
                 </select>
               </td>
             </tr>
@@ -165,7 +169,7 @@
     </div>
 
     <!-- keempat -->
-    <h2>4. Program Penjualan Barang Elektronik</h2>
+    <h2>4. Program Pembelian Barang</h2>
     <div id="tugas-empat">
       <form>
         <center>
@@ -175,16 +179,71 @@
             <tr>
               <td><label for="namaBarangEmpat">Nama Barang</label></td>
               <td>
-                <input
-                  type="text"
+                <select
                   name="namaBarangEmpat"
                   id="namaBarangEmpat"
-                />
+                  class="selects"
+                >
+                  <option value="0" selected>Pilih barang</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="jumlahEmpat">Jumlah</label></td>
+              <td><input type="text" name="jumlahEmpat" id="jumlahEmpat" /></td>
+            </tr>
+            <tr>
+              <td><label for="status">Status</label></td>
+              <td>
+                <select name="status" id="status">
+                  <option value="0">Pilih status</option>
+                  <option value="1">Pelanggan</option>
+                </select>
               </td>
             </tr>
           </table>
+          <!-- output -->
+          <hr style="border-width: 3px; color: black" />
+          <table>
+            <tr>
+              <td><label for="hargaEmpat">Harga</label></td>
+              <td>
+                <input type="text" name="hargaEmpat" id="hargaEmpat" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="totalEmpat">Total</label></td>
+              <td>
+                <input type="text" name="totalEmpat" id="totalEmpat" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="diskonEmpat">Diskon</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="diskonEmpat"
+                  id="diskonEmpat"
+                  readonly
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="bayarEmpat">Bayar</label></td>
+              <td>
+                <input type="text" name="bayarEmpat" id="bayarEmpat" readonly />
+              </td>
+            </tr>
+          </table>
+          <div class="buttons">
+            <input type="button" id="proses-tugas-empat" value="Proses" />
+            <input type="reset" value="Reset" />
+          </div>
         </center>
       </form>
+      <script src="tugas-empat.js"></script>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
