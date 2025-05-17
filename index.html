@@ -218,7 +218,7 @@
               </td>
             </tr>
             <tr>
-              <td><label for="diskonEmpat">Diskon</label></td>
+              <td><label for="diskonEmpat">Diskon 10%</label></td>
               <td>
                 <input
                   type="text"
@@ -244,6 +244,62 @@
       <script src="tugas-empat.js"></script>
     </div>
 
+    <!-- kelima -->
+    <h2>5. Program Penjualan Barang Elektronik</h2>
+    <div id="tugas-lima">
+      <form>
+        <hr />
+        <center>
+          <!-- input -->
+          <table>
+            <tr>
+              <td><label for="namaBarangLima">Nama Barang</label></td>
+              <td>
+                <input type="text" name="namaBarangLima" id="namaBarangLima" />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="hargaLima">Harga</label></td>
+              <td><input type="text" name="hargaLima" id="hargaLima" /></td>
+            </tr>
+            <tr>
+              <td><label for="jumlahLima">Jumlah</label></td>
+              <td><input type="text" name="jumlahLima" id="jumlahLima" /></td>
+            </tr>
+            <tr>
+              <td><label for="aksesoris">Aksesoris</label></td>
+              <td id="aksesoris"></td>
+            </tr>
+          </table>
+          <!-- output -->
+          <hr style="border-width: 3px; color: black" />
+          <table>
+            <tr>
+              <td><label for="totalLima">Total</label></td>
+              <td>
+                <input type="text" name="totalLima" id="totalLima" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="pajak">Pajak 10%</label></td>
+              <td><input type="text" name="pajak" id="pajak" readonly /></td>
+            </tr>
+            <tr>
+              <td><label for="bayarLima">Bayar</label></td>
+              <td>
+                <input type="text" name="bayarLima" id="bayarLima" readonly />
+              </td>
+            </tr>
+          </table>
+          <div class="buttons">
+            <input type="button" id="proses-tugas-lima" value="proses" />
+            <input type="reset" value="Reset" />
+          </div>
+        </center>
+        <hr />
+      </form>
+      <script src="tugas-lima.js"></script>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

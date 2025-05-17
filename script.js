@@ -11,6 +11,11 @@ const data = [
     { id: 10, nama: "SSD WD Green 240GB", harga: 435000 },
 ];
 
+const aksesoris = [
+    { id: 1, nama: "USB", harga: 50000 },
+    { id: 2, nama: "Memory", harga: 120000 },
+    { id: 3, nama: "Speaker", harga: 40000 },
+];
 
 function renderOption() {
     const selects = document.querySelectorAll(".selects");
@@ -27,6 +32,15 @@ function renderOption() {
     });
 };
 renderOption();
+
+function renderCheckbox() {
+    const aksesorisContainer = document.getElementById("aksesoris");
+    aksesoris.forEach(item => {
+        aksesorisContainer.innerHTML += `<label for="${item.id}"><input type="checkbox" value="${item.nama}" name="aksesoris" id="${item.id}" /> ${item.nama}</label>`
+    })
+
+};
+renderCheckbox();
 
 function cariBarang(idBarang) {
     if (idBarang !== 0) {
