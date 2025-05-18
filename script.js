@@ -11,36 +11,45 @@ const data = [
     { id: 10, nama: "SSD WD Green 240GB", harga: 435000 },
 ];
 
-const aksesoris = [
+const aksesorisElektronik = [
     { id: 1, nama: "USB", harga: 50000 },
     { id: 2, nama: "Memory", harga: 120000 },
     { id: 3, nama: "Speaker", harga: 40000 },
 ];
 
-function renderOption() {
-    const selects = document.querySelectorAll(".selects");
+const merkMotor = [
+    { id: 1, nama: "Honda", harga: 15000000 },
+    { id: 2, nama: "Yamaha", harga: 14000000 },
+    { id: 3, nama: "Suzuki", harga: 13000000 },
+];
 
-    selects.forEach(select => {
-        select.innerHTML = '<option value="0" selected>Pilih barang</option>';
+const aksesorisMotor = [
+    { id: 1, nama: "Velg", harga: 450000 },
+    { id: 2, nama: "Helm", harga: 250000 },
+    { id: 3, nama: "Jaket", harga: 300000 },
+];
 
-        data.forEach(item => {
-            const option = document.createElement("option");
-            option.value = item.id;
-            option.innerText = item.nama;
-            select.appendChild(option);
-        });
+function renderOption(id, arr) {
+    const container = document.getElementById(id);
+    arr.forEach(item => {
+        const option = document.createElement("option");
+        option.value = item.id;
+        option.innerText = item.nama;
+        container.appendChild(option);
     });
 };
-renderOption();
+renderOption("namaBarangEmpat", data);
+renderOption("namaBarangTiga", data);
+renderOption("merkMotor", merkMotor);
 
-function renderCheckbox() {
-    const aksesorisContainer = document.getElementById("aksesoris");
-    aksesoris.forEach(item => {
-        aksesorisContainer.innerHTML += `<label for="${item.id}"><input type="checkbox" value="${item.nama}" name="aksesoris" id="${item.id}" /> ${item.nama}</label>`
-    })
-
+function renderCheckbox(id, arr) {
+    const container = document.getElementById(id);
+    arr.forEach(item => {
+        container.innerHTML += `<label for="${item.id}-${item.nama}"><input type="checkbox" value="${item.id}" name="${id}" id="${item.id}-${item.nama}" /> ${item.nama}</label>`
+    });
 };
-renderCheckbox();
+renderCheckbox("aksesoris", aksesorisElektronik);
+renderCheckbox("aksesorisMotor", aksesorisMotor);
 
 function cariBarang(idBarang) {
     if (idBarang !== 0) {
@@ -48,4 +57,25 @@ function cariBarang(idBarang) {
         return barang;
     };
     return console.log("halo");
+};
+
+function cariItem(id, arr) {
+    if (id !== 0) {
+        return item = arr.find(item => item.id === id);
+    };
+    return console.log("Gada apa apa");
+};
+
+function aksesorisChecked(container) {
+    const aksesorisChecked = document.querySelectorAll(`#${container} input[type='checkbox']:checked`);
+    const arrId = Array.from(aksesorisChecked).map(cb => parseInt(cb.value));
+    return arrId;
+};
+
+function getDetailAksesoris(arrId, data) {
+    return arrId.map(id => data.find(item => item.id === id));
+};
+
+function getTotalAksesoris(arrAksesoris) {
+    return arrAksesoris.reduce((acc, item) => acc + item.harga, 0);
 };

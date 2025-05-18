@@ -1,12 +1,11 @@
 document.getElementById("proses-tugas-lima").addEventListener("click", function () {
     tampilkan5(this.form, proses5(this.form));
-    // console.log(proses5(this.form));
 });
 
 function tampilkan5(form, data) {
     form.totalLima.value = data.totalSemua.toLocaleString('id-ID');
     form.pajak.value = data.pajak.toLocaleString('id-ID');
-    form.bayarLima.value = data.bayar.toLocaleString('id-ID')
+    form.bayarLima.value = data.bayar.toLocaleString('id-ID');
     return;
 };
 
@@ -16,7 +15,7 @@ function proses5(form) {
         hargaBarang: parseInt(form[1].value),
         jumlahBarang: parseInt(form[2].value),
         totalBarang: hitungTotal(parseInt(form[1].value), parseInt(form[2].value)),
-        aksesoris: aksesorisChecked(),
+        aksesoris: aksesorisChecked("aksesoris"),
     };
 
     totalAksesoris = hitungTotalAksesoris(data.aksesoris);
@@ -26,12 +25,6 @@ function proses5(form) {
     data.bayar = parseInt(hitungBayarPajak(data.totalSemua, data.pajak));
 
     return data;
-};
-
-function aksesorisChecked() {
-    const aksesorisChecked = document.querySelectorAll("#aksesoris input[type='checkbox']:checked");
-    const arrId = Array.from(aksesorisChecked).map(cb => parseInt(cb.id));
-    return arrId;
 };
 
 function hitungTotalAksesoris(arrId) {

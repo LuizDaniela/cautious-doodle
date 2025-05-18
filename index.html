@@ -128,7 +128,7 @@
                   id="namaBarangTiga"
                   class="selects"
                 >
-                  <option value="0" selected>Pilih barang</option>
+                  <option value="0" selected>Pilih Barang</option>
                 </select>
               </td>
             </tr>
@@ -184,7 +184,7 @@
                   id="namaBarangEmpat"
                   class="selects"
                 >
-                  <option value="0" selected>Pilih barang</option>
+                  <option value="0" selected>Pilih Barang</option>
                 </select>
               </td>
             </tr>
@@ -196,7 +196,7 @@
               <td><label for="status">Status</label></td>
               <td>
                 <select name="status" id="status">
-                  <option value="0">Pilih status</option>
+                  <option value="0">Pilih Status</option>
                   <option value="1">Pelanggan</option>
                 </select>
               </td>
@@ -292,7 +292,7 @@
             </tr>
           </table>
           <div class="buttons">
-            <input type="button" id="proses-tugas-lima" value="proses" />
+            <input type="button" id="proses-tugas-lima" value="Proses" />
             <input type="reset" value="Reset" />
           </div>
         </center>
@@ -300,6 +300,88 @@
       </form>
       <script src="tugas-lima.js"></script>
     </div>
+
+    <!-- keenam -->
+    <h2>6. Program Penjualan Motor</h2>
+    <div id="tugas-enam">
+      <form>
+        <center>
+          <!-- input -->
+          <hr />
+          <table>
+            <tr>
+              <td><label for="merkMotor">Merk Motor</label></td>
+              <td>
+                <select name="merkMotor" id="merkMotor">
+                  <option value="0" selected>Pilih Merk Motor</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="aksesorisMotor">Aksesoris</label></td>
+              <td id="aksesorisMotor"></td>
+            </tr>
+            <tr>
+              <td><label for="caraBayar">Cara Pembayaran</label></td>
+              <td>
+                <label for="tunai">
+                  <input
+                    type="radio"
+                    name="caraBayar"
+                    id="tunai"
+                    value="tunai"
+                  />
+                  Tunai
+                </label>
+                <label for="kredit">
+                  <input
+                    type="radio"
+                    name="caraBayar"
+                    id="kredit"
+                    value="kredit"
+                  />
+                  Kredit
+                </label>
+              </td>
+            </tr>
+          </table>
+          <!-- output -->
+          <hr style="border-width: 3px; color: black" />
+          <table>
+            <tr>
+              <td><label for="hargaMotor">Harga</label></td>
+              <td>
+                <input type="text" name="hargaMotor" id="hargaMotor" readonly />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="bungaOrDiskon">Bunga/Diskon</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="bungaOrDiskon"
+                  id="bungaOrDiskon"
+                  readonly
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="totalMotor">Total</label></td>
+              <td>
+                <input type="text" name="totalMotor" id="totalMotor" readonly />
+              </td>
+            </tr>
+          </table>
+          <div class="buttons">
+            <input type="button" id="proses-tugas-enam" value="Proses" />
+            <input type="reset" value="Reset" />
+          </div>
+          <hr />
+        </center>
+      </form>
+      <script src="tugas-enam.js"></script>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
