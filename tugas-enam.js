@@ -5,7 +5,7 @@ document.getElementById("proses-tugas-enam").addEventListener("click", function 
 function tampilkan6(form, data) {
     form.hargaMotor.value = data.subtotal.toLocaleString('id-ID');
     form.bungaOrDiskon.value = diskonGkYh(data);
-    form.totalMotor.value = data.totalSemua.toLocaleString('id-ID');
+    form.totalMotor.value = adaGkYh(data);
 };
 
 function proses6(form) {
@@ -49,4 +49,8 @@ function diskonGkYh(data) {
         bungaOrDiskon = `Bunga ${data.bunga.toLocaleString('id-ID')}`;
     }
     return bungaOrDiskon;
+};
+
+function adaGkYh(data) {
+    return data.totalSemua !== 0 ? data.totalSemua.toLocaleString('id-ID') : data.harga.toLocaleString('id-ID');
 };

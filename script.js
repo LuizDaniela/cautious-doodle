@@ -29,6 +29,12 @@ const aksesorisMotor = [
     { id: 3, nama: "Jaket", harga: 300000 },
 ];
 
+const kategoriListrik = [
+    { id: 1, nama: "Sosial", abodemen: 10000, tarifKwh: 300, pajak: 0 },
+    { id: 2, nama: "Rumah", abodemen: 30000, tarifKwh: 500, pajak: 0.1 },
+    { id: 3, nama: "Industri", abodemen: 50000, tarifKwh: 1000, pajak: 0.3 },
+];
+
 function renderOption(id, arr) {
     const container = document.getElementById(id);
     arr.forEach(item => {
@@ -41,6 +47,7 @@ function renderOption(id, arr) {
 renderOption("namaBarangEmpat", data);
 renderOption("namaBarangTiga", data);
 renderOption("merkMotor", merkMotor);
+renderOption("kategori", kategoriListrik)
 
 function renderCheckbox(id, arr) {
     const container = document.getElementById(id);

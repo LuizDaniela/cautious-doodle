@@ -330,6 +330,7 @@
                     name="caraBayar"
                     id="tunai"
                     value="tunai"
+                    checked
                   />
                   Tunai
                 </label>
@@ -380,6 +381,70 @@
         </center>
       </form>
       <script src="tugas-enam.js"></script>
+    </div>
+
+    <!-- ketujuh -->
+    <h2>7. Program Menghitung Biaya Tagihan Listrik</h2>
+    <div id="tugas-tujuh">
+      <form>
+        <center>
+          <!-- input -->
+          <h2>PLN BANDUNG</h2>
+          <hr />
+          <table>
+            <tr>
+              <td><label for="namaPelanggan">Nama Pelanggan</label></td>
+              <td>
+                <input type="text" name="namaPelanggan" id="namaPelanggan" />
+              </td>
+            </tr>
+            <tr>
+              <td><label for="kategori">Kategori</label></td>
+              <td>
+                <select name="kategori" id="kategori">
+                  <option value="0" selected>Pilih Kategori</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="jumlahPemakaian">Jumlah Pemakaian Listrik</label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  name="jumlahPemakaian"
+                  id="jumlahPemakaian"
+                />
+              </td>
+            </tr>
+          </table>
+          <hr style="border-width: 3px; color: black" />
+          <div class="buttons">
+            <input type="button" id="proses-tugas-tujuh" value="Proses" />
+            <input type="reset" id="reset-tugas-tujuh" value="Reset" />
+          </div>
+          <!-- output -->
+          <div id="output-tagihan-listrik" class="none">
+            <div class="tagihan-listrik mt-sm">
+              <h2>TAGIHAN LISTRIK</h2>
+              <div class="table-header">
+                <div><h4>Nama Pelanggan</h4></div>
+                <div><h4>Kategori</h4></div>
+                <div><h4>Jumlah Pemakaian</h4></div>
+              </div>
+              <div class="table-row">
+                <div><p id="output-nama"></p></div>
+                <div><p id="output-kategori"></p></div>
+                <div><p id="output-jumlahPemakaian"></p></div>
+              </div>
+            </div>
+
+            <div class="rincian-tagihan mt-sm" id="rincian-tagihan"></div>
+          </div>
+        </center>
+      </form>
+      <script src="tugas-tujuh.js"></script>
     </div>
 
     <script src="script.js"></script>
