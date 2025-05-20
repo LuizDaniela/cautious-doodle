@@ -35,6 +35,11 @@ const kategoriListrik = [
     { id: 3, nama: "Industri", abodemen: 50000, tarifKwh: 1000, pajak: 0.3 },
 ];
 
+const typeRumah = [
+    { id: 1, nama: "Alamanda", harga: 120000000 },
+    { id: 2, nama: "Mawar", hargaa: 130000000 },
+];
+
 function renderOption(id, arr) {
     const container = document.getElementById(id);
     arr.forEach(item => {
@@ -47,7 +52,8 @@ function renderOption(id, arr) {
 renderOption("namaBarangEmpat", data);
 renderOption("namaBarangTiga", data);
 renderOption("merkMotor", merkMotor);
-renderOption("kategori", kategoriListrik)
+renderOption("kategori", kategoriListrik);
+renderOption("typeRumah", typeRumah);
 
 function renderCheckbox(id, arr) {
     const container = document.getElementById(id);
@@ -85,4 +91,16 @@ function getDetailAksesoris(arrId, data) {
 
 function getTotalAksesoris(arrAksesoris) {
     return arrAksesoris.reduce((acc, item) => acc + item.harga, 0);
+};
+
+function showContainer(idContainer) {
+    return document.getElementById(idContainer).classList.remove("none");
+};
+
+function hideContainer(idContainer) {
+    return document.getElementById(idContainer).classList.add("none");
+};
+
+function clearContainer(idContainer) {
+    return document.getElementById(idContainer).innerHTML = "";
 };

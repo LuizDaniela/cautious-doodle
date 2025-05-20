@@ -77,16 +77,5 @@ function renderRincianTagihan(data) {
         </div>
     </div>
     `
-};
-
-function showContainer(idContainer) {
-    return document.getElementById(idContainer).classList.remove("none");
-};
-
-function hideContainer(idContainer) {
-    return document.getElementById(idContainer).classList.add("none");
-};
-
-function clearContainer(idContainer) {
-    return document.getElementById(idContainer).innerHTML = "";
+    return;
 };

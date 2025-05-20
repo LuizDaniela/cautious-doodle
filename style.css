@@ -149,6 +149,10 @@ input[type="reset"]:hover {
   display: none;
 }
 
+#output-kredit-rumah {
+  margin-top: 1rem;
+}
+
 /* Responsive: atur padding dan layout lebih fleksibel */
 @media (max-width: 600px) {
   body {
