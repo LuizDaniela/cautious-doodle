@@ -8,10 +8,43 @@
 }
 
 body {
-  background-color: #000;
+  background-color: #4646469f;
   padding: 2rem;
   font-size: 16px;
   line-height: 1.6;
+  animation: flicker 0.8s infinite alternate;
+  -webkit-animation: flicker 0.8s infinite alternate;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+body * {
+  text-shadow: 0 0 2px rgba(0, 255, 0, 0.5);
 }
 
 h1,
@@ -29,7 +62,8 @@ form {
   border-radius: 8px;
   padding: 2rem;
   margin-bottom: 3rem;
-  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  /* box-shadow: 0 0 20px rgba(0, 255, 0, 0.2); */
+  box-shadow: 0 0 8px #00ff00, 0 0 30px rgba(0, 255, 0, 0.3);
   width: 100%;
   max-width: 600px;
   margin-left: auto;
@@ -53,20 +87,35 @@ label {
 
 input[type="text"],
 select {
-  background-color: #000;
-  border: 1px solid #00ff00;
+  /*background-color: #000;
+  */ /*border: 1px solid #00ff00;
+  */
+  background: rgba(0, 0, 0, 0.5);
+  border-left: 3px solid #00ff00;
   padding: 0.5rem;
   color: #00ff00;
   width: 100%;
   border-radius: 4px;
   margin-top: 0.25rem;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
 input[type="text"]:focus,
 select:focus {
   outline: none;
-  border-color: #00cc00;
+  /* border-color: #00cc00; */
+  background: rgba(0, 20, 0, 0.3);
+  border-left: 5px solid #00ff00;
   box-shadow: 0 0 5px #00ff00;
+}
+
+input[readonly] {
+  background: rgba(0, 10, 0, 0.2);
+  border-left: 3px solid #009900;
 }
 
 hr {
@@ -94,6 +143,8 @@ input[type="reset"] {
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
+  text-shadow: 0 0 5px #00ff00;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
 input[type="button"]:hover,
@@ -101,6 +152,7 @@ input[type="reset"]:hover {
   background-color: #00ff00;
   color: #000;
   font-weight: bold;
+  box-shadow: 0 0 10px #00ff00, 0 0 15px rgba(0, 255, 0, 0.8);
 }
 
 select,
@@ -113,9 +165,9 @@ form {
   transition: transform 0.3s ease;
 }
 
-form:hover {
+/* form:hover {
   transform: scale(1.01);
-}
+} */
 
 .flex {
   display: flex;
@@ -172,6 +224,26 @@ form:hover {
 
 #output-kredit-rumah {
   margin-top: 1rem;
+}
+
+.scanline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: rgba(0, 255, 0, 0.3);
+  animation: scan 8s linear infinite;
+  z-index: 9998;
+}
+
+@keyframes scan {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
 }
 
 /* Responsive: atur padding dan layout lebih fleksibel */

@@ -37,7 +37,7 @@ const kategoriListrik = [
 
 const typeRumah = [
     { id: 1, nama: "Alamanda", harga: 120000000 },
-    { id: 2, nama: "Mawar", hargaa: 130000000 },
+    { id: 2, nama: "Mawar", harga: 130000000 },
 ];
 
 function renderOption(id, arr) {
