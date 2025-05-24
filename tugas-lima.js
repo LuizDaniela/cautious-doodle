@@ -1,11 +1,14 @@
 document.getElementById("proses-tugas-lima").addEventListener("click", function () {
+    triggerHackingAnimation(this.closest('form'));
     tampilkan5(this.form, proses5(this.form));
 });
 
 function tampilkan5(form, data) {
-    form.totalLima.value = data.totalSemua.toLocaleString('id-ID');
-    form.pajak.value = data.pajak.toLocaleString('id-ID');
-    form.bayarLima.value = data.bayar.toLocaleString('id-ID');
+    setTimeout(() => {
+        form.totalLima.value = data.totalSemua.toLocaleString('id-ID');
+        form.pajak.value = data.pajak.toLocaleString('id-ID');
+        form.bayarLima.value = data.bayar.toLocaleString('id-ID');
+    }, 1500);
     return;
 };
 

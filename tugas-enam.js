@@ -1,11 +1,15 @@
 document.getElementById("proses-tugas-enam").addEventListener("click", function () {
+    triggerHackingAnimation(this.closest('form'));
     tampilkan6(this.form, proses6(this.form));
 });
 
 function tampilkan6(form, data) {
-    form.hargaMotor.value = data.subtotal.toLocaleString('id-ID');
-    form.bungaOrDiskon.value = diskonGkYh(data);
-    form.totalMotor.value = adaGkYh(data);
+    setTimeout(() => {
+        form.hargaMotor.value = data.subtotal.toLocaleString('id-ID');
+        form.bungaOrDiskon.value = diskonGkYh(data);
+        form.totalMotor.value = adaGkYh(data);
+    }, 1500);
+    return;
 };
 
 function proses6(form) {

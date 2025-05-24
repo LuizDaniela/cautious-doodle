@@ -104,3 +104,115 @@ function hideContainer(idContainer) {
 function clearContainer(idContainer) {
     return document.getElementById(idContainer).innerHTML = "";
 };
+
+// Function to trigger glitch effect
+function triggerGlitch(element, duration = 1000) {
+    element.classList.add('glitch');
+    element.setAttribute('data-text', element.textContent);
+
+    setTimeout(() => {
+        element.classList.remove('glitch');
+        element.removeAttribute('data-text');
+    }, duration);
+}
+
+// Function to trigger hacking animation
+function triggerHackingAnimation(form, duration = 2000) {
+    form.classList.add('hacking-animation');
+
+    // Add random binary numbers floating during animation
+    const binaryOverlay = document.createElement('div');
+    binaryOverlay.className = 'binary-overlay';
+    binaryOverlay.innerHTML = Array(50).fill(0).map(() =>
+        `<span style="position:absolute;left:${Math.random() * 100}%;top:${Math.random() * 100}%;color:rgba(0,255,0,${Math.random() * 0.5});">${Math.random() > 0.5 ? '1' : '0'}</span>`
+    ).join('');
+    form.appendChild(binaryOverlay);
+
+    setTimeout(() => {
+        form.classList.remove('hacking-animation');
+        form.removeChild(binaryOverlay);
+    }, duration);
+}
+
+// Add event listeners to all buttons
+document.querySelectorAll('input[type="button"], input[type="reset"]').forEach(button => {
+    button.addEventListener('click', function () {
+        // Trigger glitch on button
+        triggerGlitch(this, 800);
+
+        // Trigger glitch on random elements
+        const allTextElements = document.querySelectorAll('h1, h2, label, td');
+        const randomElement = allTextElements[Math.floor(Math.random() * allTextElements.length)];
+        triggerGlitch(randomElement, 1200);
+    });
+});
+
+// Add hacking animation to form submissions
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Trigger hacking animation
+        triggerHackingAnimation(this);
+
+        // Simulate processing delay
+        setTimeout(() => {
+            // Your actual form processing code here
+            alert('System accessed! Data processed.');
+        }, 2000);
+    });
+});
+
+// For forms that use button clicks instead of submit
+// document.getElementById('proses-tugas-satu')?.addEventListener('click', function () {
+//     triggerHackingAnimation(this.closest('form'));
+//     Your processing code here
+// });
+
+// Add more as needed for other buttons
+
+// function showToast(message, duration = 3000) {
+//     const toaster = document.getElementById("toaster");
+//     const toast = document.createElement("div");
+
+//     toast.innerText = message;
+//     toast.style.background = "#0f0"; // merah
+//     toast.style.color = "#fff";
+//     toast.style.padding = "10px 20px";
+//     toast.style.marginTop = "10px";
+//     toast.style.borderRadius = "8px";
+//     toast.style.boxShadow = "0 2px 6px rgba(0,0,0,0.2)";
+//     toast.style.fontFamily = "sans-serif";
+
+//     toaster.appendChild(toast);
+
+//     setTimeout(() => {
+//         toaster.removeChild(toast);
+//     }, duration);
+// }
+
+// function validateFields(fields) {
+//     for (const field of fields) {
+//         const { value, name, type = "text", required = true, allowNegative = false } = field;
+
+//         if (required && String(value).trim() === "") {
+//             showToast(`${name} tidak boleh kosong.`);
+//             return false;
+//         }
+
+
+//         if (type === "number") {
+//             const num = parseFloat(value);
+//             if (isNaN(num)) {
+//                 showToast(`${name} harus berupa angka.`);
+//                 return false;
+//             }
+//             if (!allowNegative && num < 0) {
+//                 showToast(`${name} tidak boleh negatif.`);
+//                 return false;
+//             }
+//         }
+//     }
+
+//     return true;
+// }

@@ -1,4 +1,5 @@
 document.getElementById("proses-tugas-tujuh").addEventListener("click", function () {
+    triggerHackingAnimation(this.closest('form'));
     tampilkan7(proses7(this.form));
 });
 
@@ -8,12 +9,14 @@ document.getElementById("reset-tugas-tujuh").addEventListener("click", function 
 
 function tampilkan7(data) {
     if (data.namaPelanggan !== "" && data.kategori.id !== 0 && data.jumlahPemakaian > 0) {
-        showContainer("output-tagihan-listrik");
-        document.getElementById("output-nama").innerText = data.namaPelanggan;
-        document.getElementById("output-kategori").innerText = data.kategori.nama;
-        document.getElementById("output-jumlahPemakaian").innerText = data.jumlahPemakaian;
-        clearContainer("rincian-tagihan");
-        renderRincianTagihan(data);
+        setTimeout(() => {
+            showContainer("output-tagihan-listrik");
+            document.getElementById("output-nama").innerText = data.namaPelanggan;
+            document.getElementById("output-kategori").innerText = data.kategori.nama;
+            document.getElementById("output-jumlahPemakaian").innerText = data.jumlahPemakaian;
+            clearContainer("rincian-tagihan");
+            renderRincianTagihan(data);
+        }, 1500);
         return;
     };
 };

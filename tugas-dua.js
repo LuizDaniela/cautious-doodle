@@ -1,11 +1,15 @@
 document.getElementById("proses-tugas-dua").addEventListener("click", function () {
+    triggerHackingAnimation(this.closest('form'));
     tampilkan2(this.form, proses2(this.form));
 });
 
 function tampilkan2(form, data) {
-    form.gaji.value = data.gajiPokok.toLocaleString('id-ID');
-    form.tunjAnak.value = data.tunjAnak.toLocaleString('id-ID');
-    form.totalGaji.value = data.totalGaji.toLocaleString('id-ID');
+    setTimeout(() => {
+        form.gaji.value = data.gajiPokok.toLocaleString('id-ID');
+        form.tunjAnak.value = data.tunjAnak.toLocaleString('id-ID');
+        form.totalGaji.value = data.totalGaji.toLocaleString('id-ID');
+    }, 1500);
+    return;
 }
 
 function proses2(form) {

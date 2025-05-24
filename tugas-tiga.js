@@ -1,4 +1,5 @@
 document.getElementById("proses-tugas-tiga").addEventListener("click", function () {
+    triggerHackingAnimation(this.closest('form'));
     tampilkan3(this.form, proses3(this.form));
 });
 
@@ -7,8 +8,10 @@ document.getElementById("namaBarangTiga").addEventListener("change", () => {
 });
 
 function tampilkan3(form, dataBarang) {
-    form.hargaTiga.value = dataBarang.harga.toLocaleString('id-ID');
-    form.totalTiga.value = dataBarang.total.toLocaleString('id-ID');
+    setTimeout(() => {
+        form.hargaTiga.value = dataBarang.harga.toLocaleString('id-ID');
+        form.totalTiga.value = dataBarang.total.toLocaleString('id-ID');
+    }, 1500);
     return;
 }
 

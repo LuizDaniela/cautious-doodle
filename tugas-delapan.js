@@ -1,4 +1,5 @@
 document.getElementById("proses-tugas-delapan").addEventListener("click", function () {
+    triggerHackingAnimation(this.closest('form'));
     renderProgramkreditRumah(proses8(this.form));
 });
 
@@ -28,7 +29,8 @@ function renderProgramkreditRumah(data) {
     let lamaKredit = data.lamaKredit;
     let angsuran = sisa / lamaKredit;
 
-    container.innerHTML = `
+    setTimeout(() => {
+        container.innerHTML = `
     <h2 class="text-left">PROGRAM KREDIT RUMAH</h2>
     <hr style="border-top: 3px dashed" />
     <div>
@@ -46,16 +48,17 @@ function renderProgramkreditRumah(data) {
     </div>
     `
 
-    for (let i = 1; i <= lamaKredit; i++) {
-        sisa -= angsuran;
-        container.innerHTML += `
+        for (let i = 1; i <= lamaKredit; i++) {
+            sisa -= angsuran;
+            container.innerHTML += `
         <div class="table-row">
             <div class="first"><p>${i}</p></div>
             <div><p>${angsuran.toLocaleString('id-ID')}</p></div>
             <div><p>${sisa.toLocaleString('id-ID')}</p></div>
         </div>
         `
-    }
+        }
+    }, 1500);
     return;
 };
 

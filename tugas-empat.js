@@ -1,4 +1,5 @@
 document.getElementById("proses-tugas-empat").addEventListener("click", function () {
+    triggerHackingAnimation(this.closest('form'));
     tampilkan4(this.form, proses4(this.form));
 });
 
@@ -8,10 +9,12 @@ document.getElementById("namaBarangEmpat").addEventListener("change", () => {
 
 function tampilkan4(form, data) {
     const pelanggan = data.pelanggan;
-    form.hargaEmpat.value = data.harga.toLocaleString('id-ID');
-    form.totalEmpat.value = data.total.toLocaleString('id-ID');
-    form.diskonEmpat.value = pelanggan ? "Ya" : "Tidak";
-    form.bayarEmpat.value = data.bayar.toLocaleString('id-ID');
+    setTimeout(() => {
+        form.hargaEmpat.value = data.harga.toLocaleString('id-ID');
+        form.totalEmpat.value = data.total.toLocaleString('id-ID');
+        form.diskonEmpat.value = pelanggan ? `Ya ${data.diskon.toLocaleString('id-ID')}` : "Tidak";
+        form.bayarEmpat.value = data.bayar.toLocaleString('id-ID');
+    }, 1500);
     return;
 };
 
